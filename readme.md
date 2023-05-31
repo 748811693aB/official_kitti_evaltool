@@ -31,6 +31,9 @@
   ```
    ./evaluate_object 0531_1118_results/result_sha
   ```
+- 输出结果
+  ![image](https://github.com/748811693aB/official_kitti_evaltool/assets/102968155/19654767-0490-4de4-ae19-e9c17115dce4)
+
 
 ## 补充工具
 - fill_results.py
