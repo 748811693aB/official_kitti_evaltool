@@ -8,13 +8,33 @@
   make
   ```
 - 文件夹结构
-  
+  ```
+  cpp
+│   ├── CMakeCache.txt
+│   ├── CMakeFiles
+│   ├── cmake_install.cmake
+│   ├── CMakeLists.txt
+│   ├── data
+│   │   └── object
+│   │       └── label_2
+│   ├── evaluate_object
+│   ├── evaluate_object.cpp
+│   ├── mail.h
+│   ├── Makefile
+│   └── results
+│       └── 0531_1118_results
+│           ├── result_sha
+│           │   ├── data
+
+  ```
 - 运行检测指令：
   ```
    ./evaluate_object 0531_1118_results/result_sha
   ```
 
-
+## 补充工具
+- fill_results.py
+  - 功能：用于将不完整的预测文件用空的txt补充完整
 
 
 
