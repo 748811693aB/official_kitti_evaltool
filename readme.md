@@ -7,7 +7,7 @@
   cmake ./
   make
   ```
-- 文件夹结构
+- 文件夹结构（要先将kitti的标签label保存到此路径下）
   ```
       cpp
     │   ├── CMakeCache.txt
