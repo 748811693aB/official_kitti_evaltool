@@ -1,3 +1,50 @@
+# Kitti数据集官方评价工具
+- 原版下载链接：https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d
+- 4号服务器仓库路径：```/home/whut-4/Desktop/HXB/05-31/devkit_object```    
+- 编译指令：
+  ```
+  cd cpp
+  cmake ./
+  make
+  ```
+- 文件夹结构
+  
+- 运行检测指令：
+  ```
+   ./evaluate_object 0531_1118_results/result_sha
+  ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ###########################################################################
 #            THE KITTI VISION BENCHMARK SUITE: OBJECT BENCHMARK           #
 #              Andreas Geiger    Philip Lenz    Raquel Urtasun            #
