@@ -35,12 +35,40 @@
   ![image](https://github.com/748811693aB/official_kitti_evaltool/assets/102968155/19654767-0490-4de4-ae19-e9c17115dce4)
   ![image](https://github.com/748811693aB/official_kitti_evaltool/assets/102968155/91e7e7e1-d2cc-452d-8de2-0b922e76dcf7)
 
-
+- 注意
+  - bbox数据顺序问题
+    kitti官方readme文件对于bbox数据顺序是
+    ```
+    4    bbox         2D bounding box of object in the image (0-based index):
+                     contains left, top, right, bottom pixel coordinates
+    ```
+    但是下载的kitti真值标签文件对于bbox的顺序是
+    ```
+    x_min, y_min, x_max, y_max
+    ```
+    如果按照原点在图片左上角，貌似上面两种顺序一致
+    bbox顺序一旦出错，AP结果就是全0
+  - truncated和occluded 不知道就填0
+  - 如果result txt只有2Dbbox 没有3d信息 也可以得到2D AP曲线
 ## 补充工具
 - fill_results.py
   - 功能：用于将不完整的预测文件用空的txt补充完整
 
 
+
+## 计算公式
+
+
+$$
+precision[i] = \frac{pr[i].tp}{pr[i].tp + pr[i].fp}
+$$
+
+
+
+
+$$
+precision[i] = max(precision[i]...precision[end])
+$$
 
 
 

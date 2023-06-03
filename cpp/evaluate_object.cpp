@@ -224,14 +224,22 @@ vector<tGroundtruth> loadGroundtruth(string file_name, bool &success)
   return groundtruth;
 }
 
+//保存结果到txt HXB增加计算平均值
 void saveStats(const vector<double> &precision, const vector<double> &aos, FILE *fp_det, FILE *fp_ori)
 {
-
+  float precision_sum = 0;
+  float precision_average = 0;
   // save precision to file
   if (precision.empty())
     return;
   for (int32_t i = 0; i < precision.size(); i++)
+    {
+    precision_sum += precision[i];
     fprintf(fp_det, "%f ", precision[i]);
+    }
+  precision_average = precision_sum/precision.size();
+  fprintf(fp_det, "precision_average = ");
+  fprintf(fp_det, "%f",precision_average);
   fprintf(fp_det, "\n");
 
   // save orientation similarity, only if there were no invalid orientation entries in submission (alpha=-10)
@@ -757,6 +765,23 @@ bool eval_class(FILE *fp_det, FILE *fp_ori, CLASSES current_class,
   }
 
   // save statisics and finish with success
+  //fprintf(fp_det, "%d ",difficulty);// HXB
+  //打印困难度到txt
+  switch (difficulty)
+  {
+    case 0:
+      fprintf(fp_det, "EASY ");
+      break;
+    case 1:
+      fprintf(fp_det, "MODERATE ");
+      break;
+    case 2:
+      fprintf(fp_det, "HARD ");
+      break;
+    default:
+      fprintf(fp_det, "UNKNOWN ");
+      break;
+  }
   saveStats(precision, aos, fp_det, fp_ori);
   return true;
 }
