@@ -56,6 +56,20 @@
 
 
 
+## 计算公式
+
+
+$$
+precision[i] = \frac{pr[i].tp}{pr[i].tp + pr[i].fp}
+$$
+
+
+
+
+$$
+precision[i] = max(precision[i]...precision[end])
+$$
+
 
 
 
