@@ -49,6 +49,7 @@
     如果按照原点在图片左上角，貌似上面两种顺序一致
     bbox顺序一旦出错，AP结果就是全0
   - truncated和occluded 不知道就填0
+  - 如果result txt只有2Dbbox 没有3d信息 也可以得到2D AP曲线
 ## 补充工具
 - fill_results.py
   - 功能：用于将不完整的预测文件用空的txt补充完整
